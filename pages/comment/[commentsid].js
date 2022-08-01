@@ -5,6 +5,7 @@ export default function CommentDetails({findElement}) {
   return (
     <div>
       <h1>{findElement.text}</h1>
+      <button className='btn btn-primary'>ClickMe</button>
     </div>
   )
 }
