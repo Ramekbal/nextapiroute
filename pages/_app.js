@@ -4,7 +4,7 @@ import "../styles/layout.css"
 import {ThemeProvider} from "styled-components";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Fragment } from 'react';
+import { Component, Fragment } from 'react';
 
 //here is import the external css file.
 
@@ -14,7 +14,12 @@ const theme ={
   }
 }
 
+
+
 function MyApp({ Component, pageProps }) {
+  if(Component.getLayout){
+    return Component.getLayout (<Component {...pageProps} />)
+  }
   return(
     <Fragment>
     <Header/>
