@@ -19,6 +19,15 @@ const sendData = async() =>{
     const data = response.json();
     console.log(data);
 }
+const deleteHandler = async (id)=>{
+  const data= await fetch(`api/comments/${id}`,{
+    method:"DELETE"
+  })  
+  console.log("===", data)
+  // const parseJson = await data.json();
+  // console.log("parse", parseJson);
+  fectCommentData();
+}
 
   return (
     <div>
@@ -28,7 +37,7 @@ const sendData = async() =>{
         <button onClick={fectCommentData}>Load data</button>
       {commentData.map((data)=>{
         return(
-            <Fragment key={data.id}><p>{data.id}  {data.text}</p> <hr/></Fragment>
+            <Fragment key={data.id}><p>{data.id}  {data.text}</p> <button onClick={()=>deleteHandler(data.id)}>Delete</button><hr/></Fragment>
             
         )
       })}
