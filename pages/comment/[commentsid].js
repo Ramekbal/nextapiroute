@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/dist/shared/lib/head';
 import { comment } from '../../data/comments'
 
 export default function CommentDetails({findElement}) {
   return (
     <div>
+      <Head>
+        <title>dynamic page</title>
+      </Head>
       <h1>{findElement.text}</h1>
       <button className='btn btn-primary'>ClickMe</button>
     </div>
