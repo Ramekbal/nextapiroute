@@ -11,6 +11,7 @@ export default function About() {
       <meta name='description' content='About page seo'></meta>
     </Head>
       <h2 className={Style.h2Style}>This is a about page</h2>
+      
     </>
   )
 }
